@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets"; // Adjust the path as necessary
-import { useAppContext } from "../context/AppContext";
+ import { useAppContext } from "../context/AppContext";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { user, setUser, setShowUserLogin, navigate } = useAppContext();
@@ -29,12 +29,12 @@ const Navbar = () => {
             type="text"
             placeholder="Search products"
           />
-          <img src={assets.search_icon} alt="search" className="w-4 h-4" />
+          <img src={assets?.search_icon} alt="search" className="w-4 h-4" />
         </div>
 
         <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
           <img
-            src={assets.nav_cart_icon}
+            src={assets?.nav_cart_icon}
             alt="cart"
             className="w-6 opacity-80"
           />
@@ -48,7 +48,7 @@ const Navbar = () => {
         </button>):
         (
         <div className="relative group">
-            <img src={assets.profile_icon} className="w-10" alt="" />
+            <img src={assets?.profile_icon} className="w-10" alt="" />
             <ul className="hidden group-hover:block absolute top-10 right-0 bg-white shadow border border-gray-200 py-2.5 rounded-md w-30 text-sm z-40">
                 <li onClick={() => navigate("my-orders")} className="p-1.5 pl-3 hover:bg-primary/10 cursor-pointer">My Orders</li>
                 <li onClick={logout} className="p-1.5 pl-3 hover:bg-primary/10 cursor-pointer">Logout</li>
@@ -64,7 +64,7 @@ const Navbar = () => {
         className="sm:hidden"
       >
         {/* Menu Icon SVG */}
-        <img src={assets.menu_icon} alt="menu" />
+        <img src={assets?.menu_icon} alt="menu" />
       </button>
 
       {/* Mobile Menu */}
