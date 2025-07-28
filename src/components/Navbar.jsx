@@ -4,7 +4,7 @@ import { assets } from "../assets/assets"; // Adjust the path as necessary
  import { useAppContext } from "../context/AppContext";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { user, setUser, setShowUserLogin, navigate } = useAppContext();
+  const { user, setUser, setShowUserLogin, navigate,showUserLogin } = useAppContext();
 
   const logout = async () => {
     setUser(null);
@@ -43,7 +43,7 @@ const Navbar = () => {
           </button>
         </div>
 
-       {!user ? (<button onClick={() => setShowUserLogin(true)} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-full">
+       {!user ? (<button onClick={() => {setShowUserLogin(true); console.log("showUserLogin",showUserLogin)}} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-full">
           Login
         </button>):
         (
