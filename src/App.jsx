@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { AppContextProvider, useAppContext } from "./context/AppContext";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import AllProducts from "./pages/AllProducts";
 
 const AppContent = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
@@ -21,6 +22,8 @@ const AppContent = () => {
       >
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<AllProducts />} />
+
         </Routes>
       </div>
       {!isSellerPath && <Footer />}
